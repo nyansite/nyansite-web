@@ -10,8 +10,11 @@
                 啥啥啥
             </li>
         </ul>
+        <button>
+            登录/注册
+        </button>
         <button @click="switchTheme">
-            主题： {{ themeStore.mode === "light" ? "白天" : "夜晚" }}
+            主题: {{ themeStore.mode === "light" ? "白天" : "夜晚" }}
         </button>
     </div>
   </header>
@@ -35,10 +38,26 @@ function switchTheme() {
 <style lang="scss" scoped>
     header{
         &.light{
-            background-color: rgb(0, 195, 255);
+            background-color: rgb(119, 223, 255);
+            .content{
+                button{
+                    color: black;
+                    background-color: rgb(0, 255, 251);
+                    box-shadow: 0 0 15px rgb(0, 255, 251),
+                                0 0 20px rgb(0, 255, 217);
+                }
+            }
         }
         &.dark{
-            background-color: rgb(0, 119, 255);
+            background-color: rgb(47, 137, 255);
+            .content{
+                button{
+                    color: white;
+                    background-color: rgb(13, 0, 255);
+                    box-shadow: 0 0 15px rgb(72, 0, 255), 
+                                0 0 20px rgb(168, 5, 255);
+                }
+            }
         }
         position: fixed;
         left: 0;
@@ -66,24 +85,26 @@ function switchTheme() {
                     display: inline;
                     margin-right: 5px;
                     &:hover{
-                        color: rgb(168, 255, 232);
+                        color: rgb(251, 0, 255);
                         cursor: pointer;
                     }
                 }
             }
             button{
                 display: inline;
-                position: absolute;
+                position: relative;
+                float: right;
                 right: 0;
                 top: 3px;
-                background-color: transparent;
-                border: 2px solid aquamarine;
+                border: 0;
                 border-radius: 5px;
+                margin-left: 5px;
                 height: 80%;
                 transition: all, 0.3s;
                 &:hover{
-                    background-color: white;
-                    border: 2px solid violet;       
+                    background-color: rgb(251, 0, 255);
+                    box-shadow: 0 0 15px rgb(253, 125, 255),
+                                0 0 20px rgb(255, 0, 179);     
                     cursor: pointer;          
                 }
             }

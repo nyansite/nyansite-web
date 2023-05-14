@@ -12,8 +12,8 @@ export default defineNuxtConfig({
         host: "0.0.0.0",
         port: 8080
     },
-    // 是否开启服务端渲染
-    ssr: false,
+    // 服务端渲染
+    ssr: true,
     // 设置全局SEO(head头部的相关内容)
     app: {
         head: {
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
                 lang: "zh"
             },
             title: "喵站",
-            viewport: "width-device-width, initial-scale=1",
+            viewport: "width=device-width, initial-scale=1",
             charset: "utf-8",
             meta: [
                 { name: "description", content: "亚文化交流网站，欢迎各位" }
@@ -30,8 +30,11 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', type: "image/x-icon", href: "/favicon.ico"}
             ],
+            noscript: [
+                { children: 'JavaScript is required' }
+            ]
         },
-        buildAssetsDir: "/nuxt/",
-        baseURL: "/nyansite-web-preview/" // 仅仅用于github pages预览，部署请使用baseURL: "/"
+        buildAssetsDir: "/nuxt/", 
+        baseURL: "/nyansite-preview/" // 仅仅用于github pages预览，部署请使用baseURL: "/"
     }
 })

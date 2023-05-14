@@ -7,14 +7,13 @@ import { useColorMode } from '@vueuse/core';
 export const useThemeStore = defineStore("themeStore", {
     state: () => {
         return {
-            mode: useColorMode()   // light或dark
+            mode: useColorMode(),   // light或dark
         }
     },
     actions: {
         // 切换主题
         switchMode(mode: "light" | "dark" | "auto"){
             this.mode = mode
-            // 切换body主题
             document.body.setAttribute("class", this.mode)
         }
     },
