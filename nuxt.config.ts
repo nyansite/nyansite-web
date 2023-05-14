@@ -31,6 +31,7 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: "image/x-icon", href: "/favicon.ico"}
             ],
         },
-        buildAssetsDir: "/nuxt/"
+        buildAssetsDir: "/nuxt/",
+        baseURL: "/nyansite-web-preview/" // 仅仅用于github pages预览，部署请使用baseURL: "/"
     }
 })
