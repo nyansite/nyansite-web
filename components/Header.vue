@@ -1,7 +1,8 @@
 <template>
   <header :class="themeStore.mode">
     <div class="content">
-        <img src="~/assets/imgs/logo.png" alt="logo"/>
+        <img src="~/assets/imgs/logo.png" alt="logo" v-if="themeStore.mode === 'light'"/>
+        <img src="~/assets/imgs/logo-dark.png" alt="logo" v-else/>
         <ul>
             <li>
                 啥啥啥
@@ -10,7 +11,7 @@
                 啥啥啥
             </li>
         </ul>
-        <button>
+        <button @click="router.push('/login')">
             登录/注册
         </button>
         <button @click="switchTheme">
@@ -23,6 +24,8 @@
 <script lang="ts" setup>
 import { useThemeStore } from '~/store/useThemeStore';
 
+// 路由
+const router = useRouter()
 
 // 切换主题
 const themeStore = useThemeStore()
@@ -101,6 +104,7 @@ function switchTheme() {
                 margin-left: 5px;
                 height: 80%;
                 transition: all, 0.3s;
+                border: 2px solid violet;
                 &:hover{
                     background-color: rgb(251, 0, 255);
                     box-shadow: 0 0 15px rgb(253, 125, 255),
