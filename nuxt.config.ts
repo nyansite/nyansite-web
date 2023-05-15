@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     // 模块
     modules: [
         "@vueuse/nuxt",
-        "@pinia/nuxt"
+        "@pinia/nuxt",
+        "nuxt-icon"
     ],
     // 设置默认开发服务的端口
     devServer: {

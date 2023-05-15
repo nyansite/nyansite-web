@@ -1,12 +1,10 @@
 <template>
-    <Header/>
     <main :class="themeStore.mode">
         <slot/>
     </main>
 </template>
 
 <script lang="ts" setup>
-import Header from '~/components/Header.vue';
 import { useThemeStore } from '~/store/useThemeStore';
 
 const themeStore = useThemeStore()
@@ -15,7 +13,8 @@ const themeStore = useThemeStore()
 <style lang="scss" scoped>
   main{
     margin: 45px auto;
-    width: 60%;
+    min-width: 300px;
+    width: fit-content;
     border-radius: 5px;
     &.light{
       background-color: white;
