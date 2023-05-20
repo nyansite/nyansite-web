@@ -14,12 +14,12 @@ import Header from '~/components/Header.vue';
 // 注册字体
 @font-face {
   font-family: LXGW Wenkai;
-  src: url("~/assets/fonts/LXGWWenKai.ttf");
+  src: url("https://cdn.jsdelivr.net/gh/lxgw/LxgwWenKai@main/fonts/TTF/LXGWWenKai-Regular.ttf");
 }
 
 // 引入全局主题样式
 // 默认主题
-@import "@/assets/themes/default.scss";
+@import "~/assets/themes/default.scss";
 
 body{
   transition: all, 0.4s;

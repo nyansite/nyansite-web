@@ -22,6 +22,7 @@ npm install pm2 -g
 ~~~
 
 3. 启动/停止项目
+
 在服务器上进入`nyansite-build`文件夹，运行以下命令即可。
 
 ~~~shell
@@ -36,3 +37,10 @@ pm2 stop ecosystem.config.js
 
 如果想修改端口，修改`ecosystem.config.js`即可。
 
+## 字体
+
+使用`jsDelivr`加载, 流程如下
+
+1. 在[GitHub](https://github.com)中找到你钟意的字体
+2. 复制链接，在[jsDelivr](`https://www.jsdelivr.com/github`)中转换链接
+3. 在css样式中注册即可
