@@ -1,0 +1,82 @@
+/*
+    默认内置样式主题，包含light 和 dark 两种模式
+    后续自定义主题样式请同时提供light 和 dark 两种主题
+*/
+
+// header
+header{
+    &.light{
+        background-color: rgb(119, 223, 255);
+        & button{
+            transition: all, 0.4s;
+            color: black;
+            background-color: rgb(0, 255, 251);
+            box-shadow: 0 0 15px rgb(0, 255, 251),
+                        0 0 20px rgb(68, 0, 255);
+            &:hover{
+                background-color: white;
+                box-shadow: 0 0 15px rgb(255, 0, 191), 
+                            0 0 20px rgb(168, 5, 255);
+                cursor: pointer;
+            }
+        }
+    }
+    &.dark{
+        background-color: rgb(62, 62, 62);
+        & button{
+            transition: all, 0.4s;
+            color: white;
+            background-color: rgb(49, 49, 49);
+            box-shadow: 0 0 15px rgb(72, 0, 255), 
+                        0 0 20px rgb(168, 5, 255);
+            &:hover{
+                background-color: deeppink;
+                box-shadow: 0 0 15px rgb(255, 0, 191), 
+                            0 0 20px rgb(168, 5, 255);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// body全局
+body{
+    &.light{
+        background-color: #c5e6ff;
+        color: black;
+    }
+    &.dark{
+        background-color: #282828;
+        color: white;
+    }
+    // 鼠标指针
+    cursor: url("@/assets/cursors/normal.cur"), auto;
+}
+
+// main
+main{
+    &.light{
+        background-color: white;
+    }
+    &.dark{
+        background-color: rgb(52, 52, 52);
+    }
+}
+
+// components/card.vue
+.theme-default-card{
+    transition: box-shadow, 0.4s;
+    &.light{
+        box-shadow: 0 0 15px rgb(141, 141, 141);
+        &:hover{
+            box-shadow: 0 0 25px rgb(115, 0, 255);
+        }
+    }
+    &.dark{
+        box-shadow: 0 0 10px rgb(0, 229, 255);
+        &:hover{
+            box-shadow: 0 0 25px yellow;
+        }
+    }
+}
+

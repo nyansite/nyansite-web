@@ -1,20 +1,23 @@
 <template>
-    <div class="card" :class="themeStore.mode">
+    <div class="card theme-default-card" :class="themeStore.mode">
         <p id="image">
              <img src="@/assets/imgs/card-demo.jpeg" alt="img"/>
         </p>
-        <p>
-            <h2>古明地恋</h2>
-        </p>
-        <p>
-            <h4>毛玉</h4>
-        </p>
-        <p id="menu">
-            <span>
-                <h3>赞</h3>
+        <!-- 遮罩 -->
+        <div class="card-mask">
+            <!-- 文本区 -->
+            <div class="text">
+                <h2>古明地恋的名字并不是很长</h2>
+                <h4>毛玉</h4>
+            </div>
+            <!-- 点赞区 -->
+            <div class="like">
+                <span>赞</span>
                 <Icon class="icon" name="material-symbols:favorite-outline"/>
-            </span>
-        </p>
+            </div>
+        </div>
+
+        
         
     </div>
 </template>
@@ -30,43 +33,31 @@ const themeStore = useThemeStore()
 
 <style lang="scss" scoped>
 .card{
-    transition: box-shadow, 0.4s;
-    &.light{
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 0 15px rgb(141, 141, 141);
-        &:hover{
-            box-shadow: 0 0 25px rgb(115, 0, 255);
-        }
-    }
-    &.dark{
-        background-color: rgb(115, 0, 255);
-        box-shadow: 0 0 15px rgb(31, 31, 31);
-        &:hover{
-            box-shadow: 0 0 25px yellow;
-        }
-    }
-    
     position: relative;
-    height: 380px;
+    height: 350px;
     width: 30%;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 8px;
+    margin-left: 8px;
     margin-top: 8px;
     border-radius: 8px;
+    &:hover{
+        cursor: pointer;
+    }
     p{
         position: relative;
         margin: 0 auto;
         width: fit-content;
         
         &#image{
-            position: relative;
-            width: 90%;
-            height: 70%;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
             img{
                 position: relative;
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit: cover;
                 border-radius: 5px;
             }
         }
@@ -74,25 +65,47 @@ const themeStore = useThemeStore()
             width: fit-content;
             margin: 8px auto;
         }
-        &#menu{
+    }
+
+    .card-mask{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rgb(62, 62, 62));
+        z-index: 2;
+        h2, h4{
+            position: relative;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .text{
+            color: white;
             position: absolute;
-            right: 10px;
             bottom: 10px;
+            left: 10px;
+            width: 75%;
+        }
+        .like{
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            border: 1px solid white;
+            border-radius: 6px;
+            padding: 5px;
+            transition: all, 0.4s;
             &:hover{
-                color: deeppink;
+                background-color: white;
+                color: black;
                 cursor: pointer;
-            }
-            span{
-                h3{
-                    display: inline;
-                }
                 .icon{
-                    font-size: 20px;
+                    color: red;
                 }
             }
         }
-        
-       
     }
     
 }

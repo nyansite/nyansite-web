@@ -36,6 +36,6 @@ export default defineNuxtConfig({
             ]
         },
         buildAssetsDir: "/nuxt/", 
-        baseURL: "/nyansite-preview/" // 仅仅用于github pages预览，部署请使用baseURL: "/"
+        baseURL: "/" // 仅仅用于github pages，其他情形请使用baseURL: "/"
     }
 })

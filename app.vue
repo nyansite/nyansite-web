@@ -17,19 +17,15 @@ import Header from '~/components/Header.vue';
   src: url("~/assets/fonts/LXGWWenKai.ttf");
 }
 
+// 引入全局主题样式
+// 默认主题
+@import "@/assets/themes/default.scss";
+
 body{
   transition: all, 0.4s;
   font-family: LXGW Wenkai;
   button{
     font-family: LXGW Wenkai;
-  }
-  &.light{
-    background-color: #c5e6ff;
-    color: black;
-  }
-  &.dark{
-    background-color: #294877;
-    color: white;
   }
 }
 </style>

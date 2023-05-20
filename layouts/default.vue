@@ -14,14 +14,8 @@ const themeStore = useThemeStore()
   main{
     margin: 45px auto;
     min-width: 300px;
-    width: fit-content;
+    width: 90%;
     border-radius: 5px;
-    &.light{
-      background-color: white;
-    }
-    &.dark{
-      background-color: rgb(0, 127, 254);
-    }
   }
 
 

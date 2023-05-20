@@ -16,8 +16,5 @@ export const useThemeStore = defineStore("themeStore", {
             this.mode = mode
             document.body.setAttribute("class", this.mode)
         }
-    },
-    getters: {
-        
     }
 })
