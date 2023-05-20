@@ -11,5 +11,5 @@ if [ ! -d $filePath ];then
   echo $filePath"文件夹已经存在! 文件将直接复制到文件夹"
 fi
 
-cp -r .output ./nyansite-build/.output
+mv .output ./nyansite-build/.output
 cp ./ecosystem.config.js ./nyansite-build/ecosystem.config.js

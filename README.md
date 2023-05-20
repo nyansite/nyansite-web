@@ -12,6 +12,14 @@ Nuxt-Icon: [https://github.com/nuxt-modules/icon](https://github.com/nuxt-module
 
 `Icônes`: [https://icones.js.org](https://icones.js.org)
 
+## 字体
+
+使用`jsDelivr`加载, 流程如下
+
+1. 在[GitHub](https://github.com)中找到你钟意的字体
+2. 复制链接，在[jsDelivr](https://www.jsdelivr.com/github)中转换链接
+3. 在css样式中注册即可
+
 ## 打包部署(以SSR同构渲染模式)
 
 1. 运行`pack.sh`，将自动化完成打包构建流程，生成`nyansite-build`文件夹。拷贝`nyansite-build`文件夹至服务器即可。
@@ -36,11 +44,3 @@ pm2 stop ecosystem.config.js
 **注意：切勿使用`kill`命令结束进程，pm2默认使用守护进程模式启动，只能使用以上命令停止前端服务**。
 
 如果想修改端口，修改`ecosystem.config.js`即可。
-
-## 字体
-
-使用`jsDelivr`加载, 流程如下
-
-1. 在[GitHub](https://github.com)中找到你钟意的字体
-2. 复制链接，在[jsDelivr](`https://www.jsdelivr.com/github`)中转换链接
-3. 在css样式中注册即可
