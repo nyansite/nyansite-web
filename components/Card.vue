@@ -71,7 +71,7 @@ const themeStore = useThemeStore()
         position: absolute;
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, transparent, rgb(62, 62, 62));
+        background: linear-gradient(0deg, transparent, rgba(62, 62, 62, 0.926));
         z-index: 2;
         h2, h4{
             position: relative;
@@ -83,9 +83,9 @@ const themeStore = useThemeStore()
         .text{
             color: white;
             position: absolute;
-            bottom: 10px;
+            top: 10px;
             left: 10px;
-            width: 75%;
+            width: 95%;
         }
         .like{
             color: white;

@@ -13,11 +13,11 @@
                     <div class="right-form">
                         <div class="form">
                             <div class="form-content">
-                                <h1>登录</h1>
+                                <h1>注册账号</h1>
                                 <p>
                                     <div class="row">
                                         <span>
-                                            用户名: 
+                                            输入用户名: 
                                         </span>
                                         <span>
                                             <input type="text"/>
@@ -27,20 +27,27 @@
                                 <p>
                                     <div class="row">
                                         <span id="pwd">
-                                            密码： 
+                                            输入密码： 
                                         </span>
                                         <span>
                                             <input type="password"/>
                                         </span>
                                     </div> 
                                 </p>
+                                <p>
+                                    <div class="row">
+                                        <span>
+                                            其他内容待确认...
+                                        </span>                      
+                                    </div> 
+                                </p>
                                 <p id="buttons">
                                     <div class="row">
                                         <span class="button-span">
-                                            <button>登录</button>
+                                            <button>确认注册</button>
                                         </span>
                                         <span>
-                                            <button>注册账号</button>
+                                            <button @click="router.push('/login')">返回登录</button>
                                         </span>
                                     </div> 
                                 </p>
