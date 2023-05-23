@@ -1,6 +1,6 @@
 <template>
     <NuxtLayout name="login">
-        <div class="login">
+        <div class="login theme-default-login" :class="themeStore.mode">
             <div class="back" @click="router.push('/')">
                 <span>&lt;-- 返回主页</span>
             </div>
@@ -12,7 +12,40 @@
                     </div>
                     <div class="right-form">
                         <div class="form">
-                            <h1>先摸了，之后再做</h1>
+                            <div class="form-content">
+                                <h1>登录</h1>
+                                <p>
+                                    <div class="row">
+                                        <span>
+                                            用户名: 
+                                        </span>
+                                        <span>
+                                            <input type="text"/>
+                                        </span>
+                                    </div>
+                                </p>
+                                <p>
+                                    <div class="row">
+                                        <span id="pwd">
+                                            密码： 
+                                        </span>
+                                        <span>
+                                            <input type="password"/>
+                                        </span>
+                                    </div> 
+                                </p>
+                                <p id="buttons">
+                                    <div class="row">
+                                        <span class="button-span">
+                                            <button>登录</button>
+                                        </span>
+                                        <span>
+                                            <button>注册账号</button>
+                                        </span>
+                                    </div> 
+                                </p>
+                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -27,7 +60,10 @@
     /**
      * 登录页面
      */
+    import { useThemeStore } from '~/store/useThemeStore';
+
     const router = useRouter()
+    const themeStore = useThemeStore()
 </script>
 
 <style lang="scss" scoped>
@@ -47,16 +83,10 @@
             left: 10px;
             height: fit-content;
             color: white;
-            border: 3px solid deepskyblue;
             border-radius: 7px;
             padding: 10px;
             z-index: 2;
             transition: background-color, 0.4s;
-            &:hover{
-                background-color: aquamarine;
-                cursor: pointer;
-                color: black;
-            }
         }
         .box{
             position: relative;
@@ -87,15 +117,68 @@
                 }
                 .right-form{
                     width: 50%;
-                    height: 100%;
+                    height: 70%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    min-width: 350px;
+                    min-height: 380px;
                     .form{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         width: 95%;
-                        height: 80%;
+                        height: fit-content;
+                        padding-top: 30px;
+                        padding-bottom: 30px;
                         border-radius: 10px;
-                        background-color: rgba(169, 169, 169, 0.507);
+                        
+                        .form-content{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            width: 100%;
+                            height: 100%;
+                            h1{
+                                width: fit-content;
+                                margin: 10px auto;
+                                font-size: 50px;
+                            }
+                            p{
+                                margin: 20px auto;
+                                font-size: 20px;
+                                width: 75%;
+                                &#buttons{
+                                    width: fit-content;
+                                    margin: 0 auto;
+                                }
+                                .row{ 
+                                    position: relative;
+                                    width: 100%;
+                                    white-space: nowrap;
+                                    display: inline-block;
+                                    span#pwd{
+                                        margin-right: 6px;
+                                    }
+                                    .button-span{
+                                        margin-right: 25px;
+                                    }
+                                    input{
+                                        height: 40px;
+                                        border-radius: 7px;
+                                        width: calc(90% - 40px);
+                                        font-size: 16px;
+                                        font-family: LXGW Wenkai;
+                                        transition: width, 0.4s;
+                                        &:focus{
+                                            transform: scale(101%, 101%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                 }
             }
