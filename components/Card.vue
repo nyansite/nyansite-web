@@ -1,5 +1,8 @@
 <template>
-    <div class="card theme-default-card" :class="themeStore.mode">
+    <div class="card theme-default-card" :class="
+    themeStore.mode,
+    isMobile ? 'mobile' : 'pc'
+    ">
         <p id="image">
              <img src="@/assets/imgs/card-demo.jpeg" alt="img"/>
         </p>
@@ -16,9 +19,6 @@
                 <Icon class="icon" name="material-symbols:favorite-outline"/>
             </div>
         </div>
-
-        
-        
     </div>
 </template>
 
@@ -26,20 +26,35 @@
 /**
  * 主页图片卡
  */
+import { useIsMobile } from '~/hooks/useIsMobile';
 import { useThemeStore } from '~/store/useThemeStore';
 
 const themeStore = useThemeStore()
+const { isMobile } = useIsMobile()
+
+
 </script>
 
 <style lang="scss" scoped>
 .card{
-    position: relative;
-    height: 350px;
-    width: 30%;
-    margin-right: 8px;
-    margin-left: 8px;
-    margin-top: 8px;
-    border-radius: 8px;
+    &.pc{
+        position: relative;
+        height: 350px;
+        width: 30%;
+        margin-right: 8px;
+        margin-left: 8px;
+        margin-top: 8px;
+        border-radius: 8px;
+    }
+    &.mobile{
+        position: relative;
+        height: 350px;
+        width: 80%;
+        margin-right: 8px;
+        margin-left: 8px;
+        margin-top: 8px;
+        border-radius: 8px;
+    }
     &:hover{
         cursor: pointer;
     }
