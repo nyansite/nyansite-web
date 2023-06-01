@@ -9,7 +9,7 @@ export const useIsMobile = createGlobalState(() => {
     // 记录是否是移动端，以宽度=664为界
     const isMobile: Ref<boolean> = ref<boolean>(false)
     watch(width, (newVal) => {
-        if(newVal < 664){
+        if(newVal < 750){
             isMobile.value = true
         }
         else isMobile.value = false

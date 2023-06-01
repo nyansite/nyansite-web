@@ -5,8 +5,6 @@
             ">
             <Card/>
             <Card/>
-            <Card/>
-            <Card/>
         </div>
     </NuxtLayout>
 </template>

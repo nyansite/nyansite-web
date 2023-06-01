@@ -4,8 +4,8 @@ module.exports = {
     {
       name: 'nyansite',
       port: '9000',
-      exec_mode: 'fork',//cluster
-      instances: '1',//max
+      exec_mode: 'fork',
+      instances: '1',
       script: './.output/server/index.mjs'
     }
   ]

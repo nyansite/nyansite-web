@@ -34,13 +34,6 @@
                                         </span>
                                     </div> 
                                 </p>
-                                <p>
-                                    <div class="row">
-                                        <span>
-                                            其他内容待确认...
-                                        </span>                      
-                                    </div> 
-                                </p>
                                 <p id="buttons">
                                     <div class="row">
                                         <span class="button-span">
