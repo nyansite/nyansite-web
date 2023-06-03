@@ -15,9 +15,12 @@
             <button @click="router.push('/login')">
                 登录/注册
             </button>
-            <button @click="switchLightAndDark">
-                主题: {{ themeStore.mode === "light" ? "白天" : "夜晚" }}
-            </button>
+            <Icon class="theme-switch" name="material-symbols:mode-night-outline"
+                 @click="switchLightAndDark"
+                 v-if="themeStore.mode === 'light'"/>
+            <Icon class="theme-switch" name="material-symbols:sunny-outline"
+                  @click="switchLightAndDark"
+                  v-if="themeStore.mode === 'dark'"/>
         </span>
         <span class="mobile" v-else
               @click="showSubMenu = !showSubMenu">
@@ -33,9 +36,12 @@
                 <button @click="router.push('/login')">
                     登录/注册
                 </button>
-                <button @click="switchLightAndDark">
-                    主题: {{ themeStore.mode === "light" ? "白天" : "夜晚" }}
-                </button>
+                <Icon class="theme-switch" name="material-symbols:mode-night-outline"
+                      @click="switchLightAndDark"
+                      v-if="themeStore.mode === 'light'"/>
+                <Icon class="theme-switch" name="material-symbols:sunny-outline"
+                    @click="switchLightAndDark"
+                    v-if="themeStore.mode === 'dark'"/>
             </div>
         </div>
       
@@ -108,6 +114,20 @@ const showSubMenu: Ref<boolean> = ref<boolean>(false)
                     margin-left: 5px;
                     height: 80%;
                 }
+                .theme-switch{
+                    position: relative;
+                    float: right;
+                    margin-right: 5px;
+                    display: inline;
+                    height: fit-content;
+                    height: 100%;
+                    font-size: 25px;
+                    transition: color, 0.4s;
+                    &:hover{
+                        color: deeppink;
+                        cursor: pointer;
+                    }
+                }
             }
           
             .mobile{
@@ -146,6 +166,18 @@ const showSubMenu: Ref<boolean> = ref<boolean>(false)
                         height: 40px;
                         margin: 2px;
                         border-radius: 7px;
+                    }
+                }
+                .theme-switch{
+                    position: relative;
+                    margin-left: 5px;
+                    height: 100%;
+                    top: 6px;
+                    font-size: 30px;
+                    transition: color, 0.4s;
+                    &:hover{
+                        color: deeppink;
+                        cursor: pointer;
                     }
                 }
             }
